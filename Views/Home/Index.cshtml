@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Hoş Geldiniz";
+}
+
+<div class="hero animate-fade">
+    <div class="profile-section" style="margin-bottom: 2rem;">
+        <div class="profile-img-container">
+            <img src="~/images/profile.png" alt="Beytullah" class="profile-img" />
+        </div>
+        <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1.5rem;">Beytullah</h1>
+        <p class="hero-subtitle" style="font-size: 1.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Game Developer & Software Engineer</p>
+    </div>
+    
+    <p class="hero-subtitle">
+        Sürükleyici dünyalar ve unutulmaz oyun deneyimleri tasarlıyorum. 
+        Kodun gücüyle hayalleri gerçeğe dönüştüren bir oyun tutkunuyum.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a asp-controller="Projects" asp-action="Index" class="btn-primary">Projelerimi Gör</a>
+        <a asp-controller="Contact" asp-action="Index" class="btn-secondary">İşbirliği Yapalım</a>
+    </div>
+</div>
+
+<section class="container animate-fade" style="animation-delay: 0.2s;">
+    <h2 class="section-title">Neler Yapıyorum?</h2>
+    <div class="project-grid">
+        <div class="card">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>    
+            <h3>Oyun Programlama</h3>
+            <p class="card-text">Unity ve Unreal Engine kullanarak performans odaklı, stabil oyun mekanikleri geliştiriyorum.</p>
+        </div>
+        <div class="card">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
+            <h3>Seviye Tasarımı</h3>
+            <p class="card-text">Oyuncuyu içine çeken, atmosferik ve dengeli oyun dünyaları (level design) kurguluyorum.</p>
+        </div>
+        <div class="card">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+            <h3>Optimizasyon</h3>
+            <p class="card-text">Düşük donanımlarda bile akıcı bir deneyim için gelişmiş profil oluşturma ve optimizasyon çözümleri.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .profile-img-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+        padding: 5px;
+        background: linear-gradient(135deg, var(--primary), #a855f7);
+        box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        position: relative;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid var(--bg-dark);
+    }
+
+    .profile-img-container::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        border: 2px dashed var(--primary);
+        opacity: 0.3;
+        animation: rotate 20s linear infinite;
+    }
+
+    @@keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>

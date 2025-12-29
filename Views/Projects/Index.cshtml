@@ -1,0 +1,42 @@
+@model IEnumerable<Portfolio.Models.Project>
+@{
+    ViewData["Title"] = "Projelerim";
+}
+
+<section class="container animate-fade">
+    <h1 class="section-title">Projelerim</h1>
+    <div class="project-grid">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var project in Model)
+            {
+                <div class="card">
+                    @if (!string.IsNullOrEmpty(project.ImageUrl))
+                    {
+                        <div class="card-img" style="background-image: url('@project.ImageUrl'); background-size: cover; background-position: center;"></div>
+                    }
+                    else
+                    {
+                        <div class="card-img" style="background: linear-gradient(135deg, #6366f1, #a855f7); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:2rem;">
+                            @(project.Title?.Substring(0, Math.Min(2, project.Title.Length)).ToUpper() ?? "PJ")
+                        </div>
+                    }
+                    <h3 class="card-title">@project.Title</h3>
+                    <p class="card-text">@project.Description</p>
+                    @if (!string.IsNullOrEmpty(project.ProjectLink))
+                    {
+                        <div class="mt-auto px-4 pb-4">
+                            <a href="@project.ProjectLink" target="_blank" class="btn btn-primary" style="text-decoration: none; display: inline-block; padding: 0.5rem 1rem; background: var(--primary); color: white; border-radius: 8px;">Projeyi Gör</a>
+                        </div>
+                    }
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <p>Henüz proje eklenmemiş.</p>
+            </div>
+        }
+    </div>
+</section>
