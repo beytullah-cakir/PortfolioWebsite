@@ -3,22 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Beytullah's Portfolio</title>
+    <title>@ViewData["Title"]</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a class="nav-logo" asp-controller="Home" asp-action="Index">PORTFOLIO</a>
             <div class="nav-links">
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Anasayfa</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Projects" ? "active" : "")" asp-controller="Projects" asp-action="Index">Projeler</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")" asp-controller="About" asp-action="Index">Hakkımda</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">İletişim</a>
-                
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Projects" ? "active" : "")" asp-controller="Projects" asp-action="Index">My Project</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")" asp-controller="About" asp-action="Index">About</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">Contact</a>
             </div>
         </div>
     </nav>
@@ -28,8 +27,8 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Beytullah. Bütün Hakları Saklıdır.</p>
+        <div>
+            <p>&copy; 2025</p>
         </div>
     </footer>
 

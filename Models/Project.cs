@@ -19,6 +19,6 @@ namespace Portfolio.Models
         [Display(Name = "Project Link")]
         public string? ProjectLink { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

@@ -1,5 +1,6 @@
+@model Portfolio.Models.ContactForm
 @{
-    ViewData["Title"] = "İletişim";
+    ViewData["Title"] = "Contact";
 }
 
 <section class="container animate-fade">
@@ -9,29 +10,55 @@
     </p>
 
     <div class="contact-form">
-        <form action="#" method="POST">
+        @if (TempData["Success"] != null)
+        {
+            <div style="background: rgba(34, 197, 94, 0.1); color: #22c55e; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid rgba(34, 197, 94, 0.2); text-align: center;">
+                @TempData["Success"]
+            </div>
+        }
+
+        <div asp-validation-summary="ModelOnly" style="color: #ef4444; margin-bottom: 1rem; text-align: center;"></div>
+
+        <form asp-action="Index" method="POST">
+            @Html.AntiForgeryToken()
             <div class="form-group">
-                <label class="form-label">Adınız</label>
-                <input type="text" class="form-control" placeholder="Ad Soyad" required>
+                <label asp-for="Name" class="form-label">Adınız</label>
+                <input asp-for="Name" class="form-control" placeholder="Ad Soyad" required>
+                <span asp-validation-for="Name" style="color: #ef4444; font-size: 0.8rem;"></span>
             </div>
             <div class="form-group">
-                <label class="form-label">E-posta Adresiniz</label>
-                <input type="email" class="form-control" placeholder="example@mail.com" required>
+                <label asp-for="Email" class="form-label">E-posta Adresiniz</label>
+                <input asp-for="Email" class="form-control" placeholder="example@mail.com" required>
+                <span asp-validation-for="Email" style="color: #ef4444; font-size: 0.8rem;"></span>
             </div>
             <div class="form-group">
-                <label class="form-label">Mesajınız</label>
-                <textarea class="form-control" rows="5" placeholder="Nasıl yardımcı olabilirim?" required></textarea>
+                <label asp-for="Message" class="form-label">Mesajınız</label>
+                <textarea asp-for="Message" class="form-control" rows="5" placeholder="Nasıl yardımcı olabilirim?" required></textarea>
+                <span asp-validation-for="Message" style="color: #ef4444; font-size: 0.8rem;"></span>
             </div>
-            <button type="submit" class="btn-primary" style="width: 100%;">Mesaj Gönder</button>
+            <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Mesaj Gönder</button>
         </form>
     </div>
 
     <div style="margin-top: 4rem; text-align: center;">
-        <p style="color: var(--text-muted);">Sosyal Medyada Ben:</p>
-        <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 1rem;">
-             <a href="#" class="nav-link">LinkedIn</a>
-             <a href="#" class="nav-link">GitHub</a>
-             <a href="#" class="nav-link">Twitter</a>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Sosyal Medyada Ben:</p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://www.linkedin.com/in/beytullah-cakir/" class="social-btn linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/beytullah-cakir" class="social-btn github" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.instagram.com/beytullahhcakir/" class="social-btn instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>             
         </div>
     </div>
 </section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

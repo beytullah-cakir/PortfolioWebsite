@@ -1,0 +1,47 @@
+@model Portfolio.Models.Project
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="container animate-fade">
+    <div class="card" style="max-width: 900px; margin: 0 auto; padding: 2.5rem; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 24px;">
+        <a asp-action="Index" class="btn-secondary" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.5rem 1rem;">
+            <span>&larr;</span> Back to Projects
+        </a>
+
+        <div class="project-header" style="margin-bottom: 3rem; text-align: center;">
+            <h1 class="section-title" style="margin-bottom: 1rem; text-align: center; font-size: 3.5rem;">@Model.Title</h1>
+            <p style="color: var(--text-muted);">Published on @Model.CreatedAt.ToShortDateString()</p>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <div class="project-image" style="width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 3rem; box-shadow: var(--card-shadow); border: 1px solid var(--glass-border);">
+                <img src="@Model.ImageUrl" alt="@Model.Title" style="width: 100%; height: auto; display: block;" />
+            </div>
+        }
+        else
+        {
+             <div class="project-image" style="width: 100%; height: 350px; border-radius: 20px; margin-bottom: 3rem; background: linear-gradient(135deg, var(--primary), #a855f7); display: flex; align-items: center; justify-content: center; border: 1px solid var(--glass-border);">
+                <span style="font-size: 5rem; font-weight: 800; color: rgba(255,255,255,0.2);">@Model.Title.Substring(0, Math.Min(2, Model.Title.Length)).ToUpper()</span>
+            </div>
+        }
+
+        <div class="project-content">
+            <h3 style="margin-bottom: 1.5rem; background: none; -webkit-text-fill-color: var(--text-main);">Project Description</h3>
+            <div style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 3rem;">
+                @Model.Description
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ProjectLink))
+            {
+                <div style="text-align: center; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
+                    <a href="@Model.ProjectLink" target="_blank" class="btn-primary" style="padding: 1rem 3rem; font-size: 1.1rem; transition: transform 0.3s ease;">
+                        Visit Project Website / Repository
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
