@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UBONFKozX94=",
+  "dgSpecHash": "J9bE6BTjlPQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\Portfolio\\Portfolio.csproj",
+  "projectFilePath": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Portfolio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Beytullah\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Beytullah\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

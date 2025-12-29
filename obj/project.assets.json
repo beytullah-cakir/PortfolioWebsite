@@ -3741,11 +3741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\Portfolio\\Portfolio.csproj",
+      "projectUniqueName": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Portfolio.csproj",
       "projectName": "Portfolio",
-      "projectPath": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\Portfolio\\Portfolio.csproj",
+      "projectPath": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Portfolio.csproj",
       "packagesPath": "C:\\Users\\Beytullah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\Portfolio\\obj\\",
+      "outputPath": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
