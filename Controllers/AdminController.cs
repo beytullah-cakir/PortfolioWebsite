@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Portfolio.Data;
+using Portfolio.Services;
 using Portfolio.Models;
 
 namespace Portfolio.Controllers
@@ -8,19 +7,20 @@ namespace Portfolio.Controllers
     [Route("admin_102809")]
     public class AdminController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IProjectService _projectService;
 
-        public AdminController(ApplicationDbContext context)
+        public AdminController(IProjectService projectService)
         {
-            _context = context;
+            _projectService = projectService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            var projects = await _projectService.GetAllProjectsAsync();
             var viewModel = new AdminViewModel
             {
-                Projects = await _context.Projects.OrderByDescending(p => p.CreatedAt).ToListAsync()
+                Projects = projects.OrderByDescending(p => p.CreatedAt).ToList()
             };
             return View(viewModel);
         }
@@ -31,26 +31,25 @@ namespace Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                project.CreatedAt = DateTime.UtcNow;
-                _context.Add(project);
-                await _context.SaveChangesAsync();
+                await _projectService.SaveProjectAsync(project);
                 TempData["Success"] = "Project added successfully!";
                 return RedirectToAction(nameof(Index));
             }
+            
+            var projects = await _projectService.GetAllProjectsAsync();
             var viewModel = new AdminViewModel
             {
-                Projects = await _context.Projects.OrderByDescending(p => p.CreatedAt).ToListAsync()
+                Projects = projects.OrderByDescending(p => p.CreatedAt).ToList()
             };
             return View(viewModel);
         }
-
 
         [HttpGet("Edit/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
 
-            var project = await _context.Projects.FindAsync(id);
+            var project = await _projectService.GetProjectByIdAsync(id.Value);
             if (project == null) return NotFound();
 
             return View(project);
@@ -64,17 +63,8 @@ namespace Portfolio.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(project);
-                    await _context.SaveChangesAsync();
-                    TempData["Success"] = "Project updated successfully!";
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProjectExists(project.Id)) return NotFound();
-                    else throw;
-                }
+                await _projectService.UpdateProjectAsync(project);
+                TempData["Success"] = "Project updated successfully!";
                 return RedirectToAction(nameof(Index));
             }
             return View(project);
@@ -84,19 +74,9 @@ namespace Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var project = await _context.Projects.FindAsync(id);
-            if (project != null)
-            {
-                _context.Projects.Remove(project);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Project deleted successfully!";
-            }
+            await _projectService.DeleteProjectAsync(id);
+            TempData["Success"] = "Project deleted successfully!";
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool ProjectExists(int id)
-        {
-            return _context.Projects.Any(e => e.Id == id);
         }
     }
 }

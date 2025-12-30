@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 1,
+    "Title": "Sample Project",
+    "Description": "This is a sample project loaded from a JSON file.",
+    "ImageUrl": null,
+    "ProjectLink": "https://github.com",
+    "CreatedAt": "2024-12-31T00:00:00Z"
+  }
+]
