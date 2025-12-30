@@ -18,7 +18,11 @@
                     else
                     {
                         <div class="card-img" style="background: linear-gradient(135deg, #6366f1, #a855f7); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:2rem;">
-                            @(project.Title?.Substring(0, Math.Min(2, project.Title.Length)).ToUpper() ?? "PJ")
+                            @{
+                                var title = project.Title ?? "PJ";
+                                var shortTitle = title.Length >= 2 ? title.Substring(0, 2) : title;
+                            }
+                            @shortTitle.ToUpper()
                         </div>
                     }
                     <h3 class="card-title">@project.Title</h3>

@@ -24,7 +24,11 @@
         else
         {
              <div class="project-detail-image-stub">
-                <span>@Model.Title.Substring(0, Math.Min(2, Model.Title.Length)).ToUpper()</span>
+                @{
+                    var title = Model.Title ?? "PJ";
+                    var shortTitle = title.Length >= 2 ? title.Substring(0, 2) : title;
+                }
+                <span>@shortTitle.ToUpper()</span>
             </div>
         }
 
