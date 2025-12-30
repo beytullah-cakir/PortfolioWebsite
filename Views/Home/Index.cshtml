@@ -7,15 +7,15 @@
         <div class="profile-img-container">
             <img src="~/images/profile.png" alt="Beytullah" class="profile-img" />
         </div>
-        <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1.5rem;">Beytullah Çakır</h1>
-        <p class="hero-subtitle" style="font-size: 1.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Game & Software Developer</p>
+        <h1 class="hero-title">Beytullah Çakır</h1>
+        <p class="hero-subtitle" style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Game & Software Developer</p>
     </div>
     
     <p class="hero-subtitle">
         Sürükleyici dünyalar ve unutulmaz oyun deneyimleri tasarlıyorum. 
         Kodun gücüyle hayalleri gerçeğe dönüştüren bir oyun tutkunuyum.
     </p>
-    <div style="display: flex; gap: 1rem; justify-content: center;">
+    <div class="hero-actions">
         <a asp-controller="Projects" asp-action="Index" class="btn-primary">Projelerimi Gör</a>
         <a asp-controller="Contact" asp-action="Index" class="btn-secondary">İşbirliği Yapalım</a>
     </div>
@@ -44,13 +44,13 @@
 
 <style>
     .profile-img-container {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
+        width: clamp(150px, 40vw, 220px);
+        height: clamp(150px, 40vw, 220px);
+        margin: 0 auto 1.5rem;
         border-radius: 50%;
-        padding: 5px;
+        padding: 6px;
         background: linear-gradient(135deg, var(--primary), #a855f7);
-        box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
         position: relative;
     }
 
@@ -73,6 +73,14 @@
         border: 2px dashed var(--primary);
         opacity: 0.3;
         animation: rotate 20s linear infinite;
+        pointer-events: none;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1.2rem;
+        justify-content: center;
+        width: 100%;
     }
 
     @@keyframes rotate {

@@ -4,20 +4,20 @@
 }
 
 <section class="container animate-fade">
-	<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-		<div>
-			<h1 style="margin-bottom: 2rem;">Merhaba, Ben Beytullah</h1>
-			<p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem;">
+	<div class="about-grid">
+		<div class="about-content">
+			<h1 class="section-title" style="text-align: left; margin-bottom: 2rem;">Merhaba, Ben Beytullah</h1>
+			<p class="about-text">
 				Oyun dünyasına olan tutkum, çocukluk yıllarımdaki merakımla başladı. Bugün bu merakı profesyonel bir vizyona dönüştürerek
 				Unity ve Unreal Engine platformlarında etkileyici projeler geliştiriyorum.
 			</p>
-			<p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+			<p class="about-text">
 				C# ve C++ dillerine olan hakimiyetimle, oyun fiziğinden yapay zekaya kadar geniş bir yelpazede teknik çözümler üretiyorum.
 				Sadece kod yazmakla kalmıyor, oyuncuların içinde kaybolacağı dünyalar tasarlıyorum.
 			</p>
 
-			<div style="background: var(--glass); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 20px;">
-				<h4 style="margin-bottom: 1.5rem; -webkit-text-fill-color: var(--text-main); font-size: 1.2rem;">Yeteneklerim</h4>
+			<div class="skills-section">
+				<h4 class="skills-title">Yeteneklerim</h4>
 				<div class="skills-cloud" style="justify-content: flex-start;">
 					@if (Model != null && Model.Any())
 					{
@@ -33,9 +33,9 @@
 				</div>
 			</div>
 		</div>
-		<div style="position: relative;">
-			<div style="width: 100%; aspect-ratio: 1; border-radius: 30px; background: linear-gradient(135deg, var(--primary), #a855f7); opacity: 0.2; position: absolute; top: 20px; left: 20px; z-index: -1;"></div>
-			<div style="width: 100%; aspect-ratio: 1; border-radius: 30px; background: var(--glass); border: 1px solid var(--glass-border); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+		<div class="about-media">
+			<div class="about-box-shadow"></div>
+			<div class="about-box">
 				<span style="font-size: 5rem; opacity: 0.5;">👨‍💻</span>
 			</div>
 		</div>
