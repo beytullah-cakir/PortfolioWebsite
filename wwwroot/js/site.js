@@ -26,14 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 20) {
-            navbar.style.background = 'rgba(2, 6, 23, 0.95)';
-            navbar.style.padding = '0.5rem 0';
+        if (window.scrollY > 30) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.85)';
-            navbar.style.padding = '0.75rem 0';
+            navbar.classList.remove('scrolled');
         }
     });
 });

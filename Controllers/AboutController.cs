@@ -6,17 +6,9 @@ namespace Portfolio.Controllers
 {
     public class AboutController : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public AboutController(ApplicationDbContext context)
+        public IActionResult Index()
         {
-            _context = context;
-        }
-
-        public async Task<IActionResult> Index()
-        {
-            var skills = await _context.Skills.ToListAsync();
-            return View(skills);
+            return View();
         }
     }
 }

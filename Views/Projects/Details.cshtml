@@ -7,12 +7,12 @@
 <section class="container animate-fade">
     <div class="project-details-card">
         <a asp-action="Index" class="btn-secondary" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1.2rem;">
-            <i class="fas fa-arrow-left"></i> Projelere Dön
+            <i class="fas fa-arrow-left"></i> Back to Projects
         </a>
 
         <div class="project-header">
             <h1 class="hero-title" style="margin-bottom: 1rem;">@Model.Title</h1>
-            <p style="color: var(--text-muted);">Yayınlanma Tarihi: @Model.CreatedAt.ToShortDateString()</p>
+            <p style="color: var(--text-muted);">Published Date: @Model.CreatedAt.ToShortDateString()</p>
         </div>
 
         @if (!string.IsNullOrEmpty(Model.ImageUrl))
@@ -23,30 +23,33 @@
         }
         else
         {
-             <div class="project-detail-image-stub">
+             <div class="card-img-placeholder" style="height: clamp(200px, 50vw, 400px);">
                 @{
                     var title = Model.Title ?? "PJ";
                     var shortTitle = title.Length >= 2 ? title.Substring(0, 2) : title;
                 }
-                <span>@shortTitle.ToUpper()</span>
+                <span class="placeholder-text" style="font-size: clamp(3rem, 10vw, 6rem);">@shortTitle.ToUpper()</span>
             </div>
         }
 
-        <div class="project-content">
-            <h3 class="details-subtitle">Proje Açıklaması</h3>
-            <div class="details-text">
-                @Model.Description
-            </div>
-
-            @if (!string.IsNullOrEmpty(Model.ProjectLink))
-            {
-                <div class="project-link-wrapper">
-                    <a href="@Model.ProjectLink" target="_blank" class="btn-primary" style="padding: 1rem 3rem;">
-                       Projeyi Görüntüle / Kaynak Kod
-                    </a>
+        @if (!string.IsNullOrEmpty(Model.Description))
+        {
+            <div class="project-content">
+                <h3 class="details-subtitle">Project Description</h3>
+                <div class="details-text">
+                    @Model.Description
                 </div>
-            }
-        </div>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.ProjectLink))
+        {
+            <div class="project-link-wrapper">
+                <a href="@Model.ProjectLink" target="_blank" class="btn-primary" style="padding: 1rem 3rem;">
+                    View Project / Source Code
+                </a>
+            </div>
+        }
     </div>
 </section>
 
@@ -78,24 +81,6 @@
         width: 100%;
         height: auto;
         display: block;
-    }
-
-    .project-detail-image-stub {
-        width: 100%;
-        height: clamp(200px, 50vw, 400px);
-        border-radius: clamp(12px, 3vw, 24px);
-        margin-bottom: clamp(2rem, 5vw, 3.5rem);
-        background: linear-gradient(135deg, var(--primary), #a855f7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--glass-border);
-    }
-
-    .project-detail-image-stub span {
-        font-size: clamp(3rem, 10vw, 6rem);
-        font-weight: 800;
-        color: rgba(255,255,255,0.2);
     }
 
     .details-subtitle {

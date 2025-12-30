@@ -1,35 +1,33 @@
-@model IEnumerable<Portfolio.Models.Skill>
 @{
-	ViewData["Title"] = "About";
+	ViewData["Title"] = "About Me";
 }
 
 <section class="container animate-fade">
 	<div class="about-grid">
 		<div class="about-content">
-			<h1 class="section-title" style="text-align: left; margin-bottom: 2rem;">Merhaba, Ben Beytullah</h1>
+			<h1 class="section-title" style="text-align: left; margin-bottom: 2rem;">Hi, I'm Beytullah</h1>
 			<p class="about-text">
-				Oyun dünyasına olan tutkum, çocukluk yıllarımdaki merakımla başladı. Bugün bu merakı profesyonel bir vizyona dönüştürerek
-				Unity ve Unreal Engine platformlarında etkileyici projeler geliştiriyorum.
-			</p>
-			<p class="about-text">
-				C# ve C++ dillerine olan hakimiyetimle, oyun fiziğinden yapay zekaya kadar geniş bir yelpazede teknik çözümler üretiyorum.
-				Sadece kod yazmakla kalmıyor, oyuncuların içinde kaybolacağı dünyalar tasarlıyorum.
+				My interest in game development was shaped by my curiosity for problem-solving and system building.
+				With my experience in Unity, I work on game mechanics, performance, and structured code approach.
+				I am a developer who is eager to learn new technologies and constantly improve myself.
 			</p>
 
+			<p class="about-text">
+				I am improving myself in backend development with Python and ASP.NET Core, 
+				and I am doing fundamental work on artificial intelligence and data analytics.
+				I adopt a collaborative approach, being open to feedback and not hesitating to take responsibility.
+			</p>
+
+
 			<div class="skills-section">
-				<h4 class="skills-title">Yeteneklerim</h4>
+				<h4 class="skills-title">My Skills</h4>
 				<div class="skills-cloud" style="justify-content: flex-start;">
-					@if (Model != null && Model.Any())
-					{
-						foreach (var skill in Model)
-						{
-							<span class="skill-tag">@skill.Tag</span>
-						}
-					}
-					else
-					{
-						<p style="color: var(--text-muted); font-size: 0.9rem;">Henüz yetenek eklenmemiş.</p>
-					}
+					<span class="skill-tag">Unity</span>
+					<span class="skill-tag">C#</span>
+					<span class="skill-tag">ASP.NET Core</span>
+					<span class="skill-tag">Python</span>
+					<span class="skill-tag">PostgreSQL</span>
+					<span class="skill-tag">Machine Learning & Data Analytics</span>
 				</div>
 			</div>
 		</div>

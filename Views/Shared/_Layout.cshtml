@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,16 +15,16 @@
         <div class="nav-container">
             <a class="nav-logo" asp-controller="Home" asp-action="Index">BC</a>
             
+            <div class="nav-links" id="nav-menu">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Projects" ? "active" : "")" asp-controller="Projects" asp-action="Index">My Projects</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")" asp-controller="About" asp-action="Index">About</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">Contact</a>
+            </div>
+
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
-        </div>
-
-        <div class="nav-links" id="nav-menu">
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Projects" ? "active" : "")" asp-controller="Projects" asp-action="Index">My Projects</a>
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")" asp-controller="About" asp-action="Index">About</a>
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">Contact</a>
         </div>
     </nav>
 

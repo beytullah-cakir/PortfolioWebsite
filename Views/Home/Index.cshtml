@@ -5,41 +5,50 @@
 <div class="hero animate-fade">
     <div class="profile-section" style="margin-bottom: 2rem;">
         <div class="profile-img-container">
-            <img src="~/images/profile.png" alt="Beytullah" class="profile-img" />
+            <img src="~/images/profile-img.jpeg" alt="Beytullah" class="profile-img" />
         </div>
         <h1 class="hero-title">Beytullah Çakır</h1>
         <p class="hero-subtitle" style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Game & Software Developer</p>
     </div>
     
-    <p class="hero-subtitle">
-        Sürükleyici dünyalar ve unutulmaz oyun deneyimleri tasarlıyorum. 
-        Kodun gücüyle hayalleri gerçeğe dönüştüren bir oyun tutkunuyum.
-    </p>
     <div class="hero-actions">
-        <a asp-controller="Projects" asp-action="Index" class="btn-primary">Projelerimi Gör</a>
-        <a asp-controller="Contact" asp-action="Index" class="btn-secondary">İşbirliği Yapalım</a>
+        <a asp-controller="Projects" asp-action="Index" class="btn-primary">View My Projects</a>
+        <a asp-controller="Contact" asp-action="Index" class="btn-secondary">Let's Work Together</a>
     </div>
 </div>
 
 <section class="container animate-fade" style="animation-delay: 0.3s;">
-    <h2 class="section-title">Neler Yapıyorum?</h2>
+    <h2 class="section-title">What I Do</h2>
     <div class="project-grid">
         <div class="card">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>    
-            <h3>Oyun Programlama</h3>
-            <p class="card-text">Unity ve Unreal Engine kullanarak performans odaklı, stabil oyun mekanikleri geliştiriyorum.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>
+            <h3>Game Development</h3>
+            <p class="card-text">
+                Developing performance-oriented, scalable, and stable game mechanics using Unity. 
+                I prioritize clean code principles and sustainable architecture.
+            </p>
         </div>
+
         <div class="card">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
-            <h3>Seviye Tasarımı</h3>
-            <p class="card-text">Oyuncuyu içine çeken, atmosferik ve dengeli oyun dünyaları (level design) kurguluyorum.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐍</div>
+            <h3>Backend Development</h3>
+            <p class="card-text">
+                Developing secure, performant, and RESTful backend services using Python and ASP.NET Core. 
+                Working on API design, database integration, and scalable architectures.
+            </p>
         </div>
+
         <div class="card">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
-            <h3>Optimizasyon</h3>
-            <p class="card-text">Düşük donanımlarda bile akıcı bir deneyim için gelişmiş profil oluşturma ve optimizasyon çözümleri.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
+            <h3>Machine Learning & Data Analysis</h3>
+            <p class="card-text">
+                Analyzing data using machine learning techniques to identify patterns and extract meaningful insights.
+                Working on data preprocessing, exploratory analysis, and basic model building to support data-driven decisions.
+            </p>
         </div>
+
     </div>
+
 </section>
 
 <style>

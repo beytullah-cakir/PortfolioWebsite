@@ -20,8 +20,7 @@ namespace Portfolio.Controllers
         {
             var viewModel = new AdminViewModel
             {
-                Projects = await _context.Projects.OrderByDescending(p => p.CreatedAt).ToListAsync(),
-                Skills = await _context.Skills.ToListAsync()
+                Projects = await _context.Projects.OrderByDescending(p => p.CreatedAt).ToListAsync()
             };
             return View(viewModel);
         }
@@ -35,44 +34,16 @@ namespace Portfolio.Controllers
                 project.CreatedAt = DateTime.UtcNow;
                 _context.Add(project);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Proje başarıyla eklendi!";
+                TempData["Success"] = "Project added successfully!";
                 return RedirectToAction(nameof(Index));
             }
             var viewModel = new AdminViewModel
             {
-                Projects = await _context.Projects.OrderByDescending(p => p.CreatedAt).ToListAsync(),
-                Skills = await _context.Skills.ToListAsync()
+                Projects = await _context.Projects.OrderByDescending(p => p.CreatedAt).ToListAsync()
             };
             return View(viewModel);
         }
 
-        [HttpPost("AddSkill")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddSkill(string tag)
-        {
-            if (!string.IsNullOrWhiteSpace(tag))
-            {
-                var skill = new Skill { Tag = tag };
-                _context.Skills.Add(skill);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Yetenek başarıyla eklendi!";
-            }
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost("DeleteSkill")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteSkill(int id)
-        {
-            var skill = await _context.Skills.FindAsync(id);
-            if (skill != null)
-            {
-                _context.Skills.Remove(skill);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Yetenek başarıyla silindi!";
-            }
-            return RedirectToAction(nameof(Index));
-        }
 
         [HttpGet("Edit/{id}")]
         public async Task<IActionResult> Edit(int? id)
@@ -97,7 +68,7 @@ namespace Portfolio.Controllers
                 {
                     _context.Update(project);
                     await _context.SaveChangesAsync();
-                    TempData["Success"] = "Proje başarıyla güncellendi!";
+                    TempData["Success"] = "Project updated successfully!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,7 +89,7 @@ namespace Portfolio.Controllers
             {
                 _context.Projects.Remove(project);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Proje başarıyla silindi!";
+                TempData["Success"] = "Project deleted successfully!";
             }
             return RedirectToAction(nameof(Index));
         }

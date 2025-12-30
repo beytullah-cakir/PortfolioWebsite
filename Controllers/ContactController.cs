@@ -44,8 +44,8 @@ namespace Portfolio.Controllers
                         var mailMessage = new MailMessage
                         {
                             From = new MailAddress(senderEmail!),
-                            Subject = $"Portfolio İletişim: {model.Name}",
-                            Body = $"Gönderen: {model.Name} ({model.Email})\n\nMesaj:\n{model.Message}",
+                            Subject = $"Portfolio Contact: {model.Name}",
+                            Body = $"From: {model.Name} ({model.Email})\n\nMessage:\n{model.Message}",
                             IsBodyHtml = false
                         };
                         mailMessage.To.Add(receiverEmail!);
@@ -53,12 +53,12 @@ namespace Portfolio.Controllers
                         await client.SendMailAsync(mailMessage);
                     }
 
-                    TempData["Success"] = "Mesajınız başarıyla gönderildi! Sizinle en kısa sürede iletişime geçeceğim.";
+                    TempData["Success"] = "Your message has been sent successfully! I will get back to you as soon as possible.";
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", "Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.");
+                    ModelState.AddModelError("", "An error occurred while sending your message. Please try again later.");
                     // Log the error (ex) if needed
                 }
             }

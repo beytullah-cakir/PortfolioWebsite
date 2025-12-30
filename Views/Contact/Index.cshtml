@@ -4,9 +4,9 @@
 }
 
 <section class="container animate-fade">
-    <h1 class="section-title">Benimle İletişime Geçin</h1>
+    <h1 class="section-title">Get In Touch</h1>
     <p style="text-align: center; color: var(--text-muted); margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Projeniz hakkında konuşmak mı istiyorsunuz? Ya da sadece bir "merhaba" demek isterseniz formdan bana ulaşabilirsiniz.
+        Want to talk about your project? Or just want to say "hello"? You can reach me through the form.
     </p>
 
     <div class="contact-form">
@@ -22,26 +22,26 @@
         <form asp-action="Index" method="POST">
             @Html.AntiForgeryToken()
             <div class="form-group">
-                <label asp-for="Name" class="form-label">Adınız</label>
-                <input asp-for="Name" class="form-control" placeholder="Ad Soyad" required>
+                <label asp-for="Name" class="form-label">Your Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Full Name" required>
                 <span asp-validation-for="Name" style="color: #ef4444; font-size: 0.8rem;"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="form-label">E-posta Adresiniz</label>
+                <label asp-for="Email" class="form-label">Your Email</label>
                 <input asp-for="Email" class="form-control" placeholder="example@mail.com" required>
                 <span asp-validation-for="Email" style="color: #ef4444; font-size: 0.8rem;"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Message" class="form-label">Mesajınız</label>
-                <textarea asp-for="Message" class="form-control" rows="5" placeholder="Nasıl yardımcı olabilirim?" required></textarea>
+                <label asp-for="Message" class="form-label">Your Message</label>
+                <textarea asp-for="Message" class="form-control" rows="5" placeholder="How can I help you?" required></textarea>
                 <span asp-validation-for="Message" style="color: #ef4444; font-size: 0.8rem;"></span>
             </div>
-            <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Mesaj Gönder</button>
+            <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Send Message</button>
         </form>
     </div>
 
     <div style="margin-top: 4rem; text-align: center;">
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Sosyal Medyada Ben:</p>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Find me on Social Media:</p>
         <div class="social-buttons">
             <a href="https://www.linkedin.com/in/beytullah-cakir/" class="social-btn linkedin" target="_blank">
                 <i class="fab fa-linkedin-in"></i>

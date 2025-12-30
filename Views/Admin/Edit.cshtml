@@ -1,14 +1,14 @@
 @model Portfolio.Models.Project
 
 @{
-    ViewData["Title"] = "Proje Düzenle";
+    ViewData["Title"] = "Edit Project";
 }
 
 <div class="container animate-fade" style="max-width: 800px; margin-top: 5rem; margin-bottom: 5rem;">
     <div class="card" style="background: var(--glass); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-            <h2 class="section-title" style="margin-bottom: 0; text-align: left;">Projeyi Düzenle</h2>
-            <a asp-action="Index" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">Vazgeç</a>
+            <h2 class="section-title" style="margin-bottom: 0; text-align: left;">Edit Project</h2>
+            <a asp-action="Index" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">Cancel</a>
         </div>
         
         <form asp-action="Edit" method="post">
@@ -17,30 +17,29 @@
             <input type="hidden" asp-for="CreatedAt" />
             
             <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label asp-for="Title" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Proje Başlığı</label>
+                <label asp-for="Title" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Project Title</label>
                 <input asp-for="Title" class="form-control" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white;" required />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label asp-for="Description" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Proje Açıklaması</label>
-                <textarea asp-for="Description" class="form-control" rows="6" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white;" required></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <label asp-for="Description" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Project Description (Optional)</label>
+                <textarea asp-for="Description" class="form-control" rows="6" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white;"></textarea>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label asp-for="ImageUrl" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Görsel URL</label>
+                <label asp-for="ImageUrl" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Image URL</label>
                 <input asp-for="ImageUrl" class="form-control" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white;" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
 
             <div class="form-group" style="margin-bottom: 2.5rem;">
-                <label asp-for="ProjectLink" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Proje Linki</label>
+                <label asp-for="ProjectLink" class="form-label" style="color: var(--text-muted); margin-bottom: 0.5rem; display: block;">Project Link</label>
                 <input asp-for="ProjectLink" class="form-control" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white;" />
                 <span asp-validation-for="ProjectLink" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; cursor: pointer; border: none; font-size: 1.1rem;">Değişiklikleri Kaydet</button>
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; cursor: pointer; border: none; font-size: 1.1rem;">Save Changes</button>
         </form>
     </div>
 </div>
