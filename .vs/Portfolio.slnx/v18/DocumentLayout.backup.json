@@ -51,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{D22C5090-2E42-7CF5-DFCE-2717F9F4F06F}|Portfolio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D22C5090-2E42-7CF5-DFCE-2717F9F4F06F}|Portfolio.csproj|c:\\users\\beytullah\\desktop\\.projects\\portfoliowebsite\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D22C5090-2E42-7CF5-DFCE-2717F9F4F06F}|Portfolio.csproj|solutionrelative:controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D22C5090-2E42-7CF5-DFCE-2717F9F4F06F}|Portfolio.csproj|c:\\users\\beytullah\\desktop\\.projects\\portfoliowebsite\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D22C5090-2E42-7CF5-DFCE-2717F9F4F06F}|Portfolio.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -154,7 +150,7 @@
               "RelativeDocumentMoniker": "Views\\About\\Index.cshtml",
               "ToolTip": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Views\\About\\Index.cshtml",
               "RelativeToolTip": "Views\\About\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-29T22:27:18.654Z",
               "EditorCaption": ""
@@ -197,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "ProjectsController.cs",
               "DocumentMoniker": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Controllers\\ProjectsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
@@ -230,18 +226,6 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-29T21:32:34.76Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SkillsController.cs",
-              "DocumentMoniker": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Controllers\\SkillsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SkillsController.cs",
-              "ToolTip": "C:\\Users\\Beytullah\\Desktop\\.PROJECTS\\PortfolioWebsite\\Controllers\\SkillsController.cs",
-              "RelativeToolTip": "Controllers\\SkillsController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAcwJkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T21:27:48.963Z"
             }
           ]
         }
