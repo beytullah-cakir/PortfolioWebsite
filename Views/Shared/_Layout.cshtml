@@ -18,13 +18,13 @@
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
+        </div>
 
-            <div class="nav-links" id="nav-menu">
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Projects" ? "active" : "")" asp-controller="Projects" asp-action="Index">My Projects</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")" asp-controller="About" asp-action="Index">About</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">Contact</a>
-            </div>
+        <div class="nav-links" id="nav-menu">
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Projects" ? "active" : "")" asp-controller="Projects" asp-action="Index">My Projects</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")" asp-controller="About" asp-action="Index">About</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">Contact</a>
         </div>
     </nav>
 
